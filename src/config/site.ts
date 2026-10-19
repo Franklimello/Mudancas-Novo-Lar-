@@ -3,7 +3,21 @@
  * Itens marcados com "CONFIRMAR" precisam ser validados com o cliente.
  */
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mudancasnovolar.com.br").replace(/\/$/, "")
+/*
+ * Endereço do site, em ordem de preferência:
+ * 1. NEXT_PUBLIC_SITE_URL, se for definida na Vercel
+ * 2. VERCEL_PROJECT_PRODUCTION_URL, que a Vercel preenche sozinha com o domínio de
+ *    produção: o .vercel.app enquanto não houver domínio próprio, e o domínio
+ *    próprio assim que ele for adicionado ao projeto
+ * 3. localhost, no desenvolvimento
+ */
+function resolveSiteUrl() {
+  if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  return "http://localhost:3000"
+}
+
+const siteUrl = resolveSiteUrl().replace(/\/$/, "")
 
 export const site = {
   name: "Mudanças Novo Lar",

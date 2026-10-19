@@ -19,7 +19,7 @@ Copie `.env.example` para `.env.local` e preencha:
 
 | Variável | Para quê |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Domínio final (canonical, sitemap, Open Graph, JSON-LD) |
+| `NEXT_PUBLIC_SITE_URL` | Opcional. Força o endereço do site. Na Vercel, sem ela, o site usa o domínio de produção do projeto (o `.vercel.app` ou o domínio próprio, quando houver) |
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 (opcional; sem ele nenhum script carrega) |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | Meta tag de verificação do Search Console (opcional) |
 
@@ -56,10 +56,16 @@ Para criar um serviço novo, adicione um item em `servicos.ts`. A página `/serv
 ## Publicar (Vercel)
 
 1. Suba o repositório no GitHub e importe na Vercel.
-2. Configure as variáveis de ambiente acima.
-3. Aponte o domínio.
-4. No Google Search Console: adicione a propriedade, verifique e envie `https://SEU-DOMINIO/sitemap.xml`.
+2. As variáveis de ambiente são opcionais: só para Google Analytics e verificação do Search Console.
+3. Por enquanto o site fica no endereço provisório `.vercel.app`. Canonical, sitemap e prévias de link já usam esse endereço sozinhos.
+4. No Google Search Console: adicione a propriedade (prefixo de URL), verifique pela meta tag (`NEXT_PUBLIC_GSC_VERIFICATION`) e envie `/sitemap.xml`.
 5. No Perfil da Empresa no Google: coloque o link do site e use o mesmo nome, telefone e cidade que estão no site.
+
+### Quando houver domínio próprio
+
+1. Adicione o domínio em Settings → Domains na Vercel. O site passa a usar o domínio novo no próximo deploy, sem mexer no código.
+2. Na mesma tela, redirecione o `.vercel.app` para o domínio novo (308), para o Google não ver dois endereços.
+3. No Search Console, adicione a propriedade do domínio novo e envie o sitemap de novo.
 
 ## Material do cliente
 
