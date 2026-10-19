@@ -1,0 +1,157 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/*
+ * Identidade Mudanças Novo Lar
+ * Cores tiradas do logo, em versão chapada:
+ *   marinho  #0B2545  contorno do logo; texto e áreas escuras
+ *   petróleo #079FB7  "Novo"; detalhes. Para texto usar #036D80 (AA)
+ *   folha    #5DA708  "Lar"; marcações sobre o marinho
+ *   vermelho #D7141A  "MUDANÇAS"; fundo do header (branco por cima: 5.2:1)
+ *   papelão  #D9BC8E  só na etiqueta de orçamento
+ *   névoa    #EEF3F6  seções alternadas
+ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-archivo);
+  --font-heading: var(--font-archivo);
+
+  --color-vermelho: #d7141a;
+  --color-marinho: #0b2545;
+  --color-marinho-escuro: #04142b;
+  --color-marinho-2: #163a63;
+  --color-petroleo: #079fb7;
+  --color-petroleo-texto: #036d80;
+  --color-petroleo-claro: #d5eef3;
+  --color-folha: #5da708;
+  --color-folha-clara: #8ed14a;
+  --color-papelao: #d9bc8e;
+  --color-papelao-escuro: #5c4320;
+  --color-fita: rgb(246 240 224 / 0.82);
+  --color-nevoa: #eef3f6;
+  --color-linha: #d3dde5;
+  --color-tinta-suave: #4a6178;
+  --color-erro: #c8102e;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 14px;
+  --radius-2xl: 20px;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0b2545;
+  --card: #ffffff;
+  --card-foreground: #0b2545;
+  --popover: #ffffff;
+  --popover-foreground: #0b2545;
+  --primary: #0b2545;
+  --primary-foreground: #ffffff;
+  --secondary: #eef3f6;
+  --secondary-foreground: #0b2545;
+  --muted: #eef3f6;
+  --muted-foreground: #4a6178;
+  --accent: #d5eef3;
+  --accent-foreground: #0b2545;
+  --destructive: #c8102e;
+  --border: #d3dde5;
+  --input: #b7c6d2;
+  --ring: #079fb7;
+  --radius: 8px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    font-variant-numeric: lining-nums;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-petroleo);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--color-petroleo-claro);
+    color: var(--color-marinho);
+  }
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+/* Títulos com a largura expandida da Archivo, como letreiro de caminhão baú */
+@utility font-letreiro {
+  font-family: var(--font-archivo);
+  font-stretch: 118%;
+  font-weight: 800;
+  letter-spacing: -0.012em;
+  line-height: 1.02;
+}
+
+@utility font-letreiro-medio {
+  font-family: var(--font-archivo);
+  font-stretch: 110%;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.12;
+}
+
+@utility container-site {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Fita adesiva da etiqueta de orçamento */
+@utility fita {
+  background: var(--color-fita);
+  box-shadow: 0 1px 0 rgb(11 37 69 / 0.06);
+  backdrop-filter: blur(1px);
+}
