@@ -70,7 +70,7 @@ export const servicos: Servico[] = [
       "Mudanças de Ipatinga e do Vale do Aço para outras cidades de Minas Gerais e para outros estados, em caminhão baú, com móveis protegidos em mantas acolchoadas e amarrados. Orçamento pelo WhatsApp.",
     intro: [
       "Mudança de longa distância pede outro cuidado com a carga. Na estrada o caminhão balança e freia por horas. Por isso os móveis vão envolvidos em mantas acolchoadas, sofás e colchões no meião, e tudo amarrado dentro do baú, com as peças grandes travando o resto.",
-      "Você combina com a gente a data de saída e acompanha pelo WhatsApp. Quem for receber no destino só precisa estar lá para abrir a casa e dizer onde cada coisa fica.",
+      "Fazemos mudança de Ipatinga para Belo Horizonte, Governador Valadares e outras cidades de Minas, e para outros estados. Você combina com a gente a data de saída e acompanha pelo WhatsApp. Quem for receber no destino só precisa estar lá para abrir a casa e dizer onde cada coisa fica.",
     ],
     inclui: [
       "Móveis protegidos com mantas acolchoadas para a viagem",
@@ -95,6 +95,46 @@ export const servicos: Servico[] = [
         pergunta: "O caminhão chega até qualquer endereço?",
         resposta:
           "Trabalhamos com caminhão baú, que precisa de rua com acesso para caminhão. Mande o endereço de destino no pedido para confirmarmos antes.",
+      },
+    ],
+  },
+  {
+    // CONFIRMAR com o cliente: fretes de poucos móveis com os caminhões menores da frota
+    slug: "fretes-e-mudancas-pequenas",
+    nome: "Fretes e mudanças pequenas",
+    resumo:
+      "Poucos móveis, um quarto ou só a geladeira e o sofá. Os caminhões menores da frota fazem o frete em Ipatinga e no Vale do Aço.",
+    h1: "Fretes e mudanças pequenas em Ipatinga",
+    metaTitle: "Frete e mudança pequena em Ipatinga e no Vale do Aço",
+    metaDescription:
+      "Frete de móveis e mudança pequena em Ipatinga e no Vale do Aço: geladeira, fogão, sofá, cama ou um quarto inteiro, em caminhão baú, com proteção e montagem. Orçamento pelo WhatsApp.",
+    intro: [
+      "Nem toda mudança é de uma casa inteira. Para quem vai levar poucos móveis, um quarto, ou só a geladeira e o sofá, a gente faz o frete com os caminhões menores da frota, com o mesmo cuidado de uma mudança completa.",
+      "Os móveis vão protegidos com mantas acolchoadas e amarrados no baú fechado. Se precisar, desmontamos na saída e montamos no destino, em Ipatinga, Coronel Fabriciano, Timóteo ou Santana do Paraíso.",
+    ],
+    inclui: [
+      "Caminhões menores para fretes e cargas pequenas",
+      "Móveis protegidos com mantas acolchoadas",
+      "Baú fechado, protegido da chuva e da poeira",
+      "Desmontagem e montagem, se precisar",
+      "Fretes em Ipatinga e entre as cidades do Vale do Aço",
+    ],
+    foto: fotos.menores,
+    perguntas: [
+      {
+        pergunta: "Vocês fazem frete de poucos móveis?",
+        resposta:
+          "Fazemos. Diga no pedido o que vai, de onde sai e para onde vai, e passamos o valor. Para cargas pequenas usamos os caminhões menores da frota.",
+      },
+      {
+        pergunta: "Quanto custa um frete em Ipatinga?",
+        resposta:
+          "Depende do volume, da distância e do acesso nos dois endereços. Mande pelo WhatsApp a lista ou uma foto do que vai e respondemos com o orçamento, sem compromisso.",
+      },
+      {
+        pergunta: "Vocês transportam geladeira, fogão e máquina de lavar?",
+        resposta:
+          "Transportamos. Eles vão protegidos com mantas acolchoadas e amarrados em pé dentro do baú, para não tombar no caminho.",
       },
     ],
   },

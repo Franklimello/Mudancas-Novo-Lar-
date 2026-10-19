@@ -48,6 +48,7 @@ Para criar um serviço novo, adicione um item em `servicos.ts`. A página `/serv
 - [ ] Link do perfil da empresa no Google (`site.googleBusinessUrl`): os clientes citam avaliações lá
 - [ ] Se é a Marília quem atende (o nome aparece no site)
 - [ ] Se fazem mudança comercial e transporte avulso ("só o transporte")
+- [ ] Se fazem fretes de poucos móveis (página `/servicos/fretes-e-mudancas-pequenas`; para tirar, remova o item em `src/content/servicos.ts` e as perguntas de frete em `src/content/faq.ts`)
 - [ ] Se o material de embalagem está incluído no preço
 - [ ] Domínio definitivo
 - [ ] Fotos da embalagem (mantas acolchoadas e meião em uso). Hoje todas as fotos são da frota (`material-cliente/novasfotos`).

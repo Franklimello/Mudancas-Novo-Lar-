@@ -29,8 +29,8 @@ export function Hero() {
           </CaminhaoTitulo>
 
           <p className="mt-8 max-w-[52ch] text-lg text-tinta-suave sm:text-xl sm:leading-relaxed">
-            A gente protege os móveis, desmonta, leva e monta de novo. Casas, apartamentos e comércios em Ipatinga e no Vale do
-            Aço, e mudanças estaduais e interestaduais.
+            Empresa de mudanças em Ipatinga com caminhão baú fechado. A gente protege os móveis, desmonta, leva e monta de
+            novo, em casas, apartamentos e comércios do Vale do Aço, e faz fretes e mudanças estaduais e interestaduais.
           </p>
 
           <figure className="mt-10 max-w-[30rem] border-l-4 border-folha pl-5">

@@ -18,32 +18,32 @@ export type Foto = {
 export const fotos = {
   letreiro: {
     src: letreiro,
-    alt: "Caminhão baú branco com o nome Mudanças Novo Lar pintado na lateral, estacionado na rua",
+    alt: "Caminhão de mudança baú branco com o nome Mudanças Novo Lar pintado na lateral, estacionado na rua",
     legenda: "Caminhão baú com o nome da empresa na lateral.",
   },
   carregando: {
     src: carregando,
-    alt: "Dois caminhões baú estacionados em uma rua, um deles com a porta lateral aberta durante o carregamento",
+    alt: "Dois caminhões de mudança estacionados em uma rua, um deles com a porta lateral do baú aberta durante o carregamento",
     legenda: "Mudança em andamento, com o baú aberto para carregar.",
   },
   menores: {
     src: menores,
-    alt: "Dois caminhões baú menores, um Iveco e um Volkswagen, estacionados lado a lado",
+    alt: "Dois caminhões baú menores para fretes e mudanças pequenas, um Iveco e um Volkswagen, estacionados lado a lado",
     legenda: "Os caminhões menores da frota.",
   },
   portaLateral: {
     src: portaLateral,
-    alt: "Caminhão baú de perfil com a porta lateral aberta, em frente a um prédio residencial",
+    alt: "Caminhão de mudança de perfil com a porta lateral do baú aberta, em frente a um prédio residencial",
     legenda: "Baú com a porta lateral aberta em frente a um prédio.",
   },
   cargo: {
     src: cargo,
-    alt: "Caminhão Ford Cargo prata com baú de alumínio estacionado em frente a um galpão",
+    alt: "Caminhão de mudança Ford Cargo prata com baú de alumínio, estacionado em frente a um galpão",
     legenda: "Baú fechado, que protege a carga da chuva e da poeira na estrada.",
   },
   doisCaminhoes: {
     src: doisCaminhoes,
-    alt: "Dois caminhões baú da empresa estacionados um atrás do outro em uma rua",
+    alt: "Dois caminhões de mudança da empresa estacionados um atrás do outro em uma rua",
     legenda: "Parte da frota de caminhões baú.",
   },
   cargoFrente: {

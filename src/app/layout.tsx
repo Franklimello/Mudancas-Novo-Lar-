@@ -28,7 +28,7 @@ const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION || site.googleS
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Mudanças em Ipatinga e no Vale do Aço | Mudanças Novo Lar",
+    default: "Empresa de mudanças e fretes em Ipatinga | Mudanças Novo Lar",
     template: "%s | Mudanças Novo Lar",
   },
   description: site.description,

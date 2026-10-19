@@ -21,7 +21,7 @@ export function Areas() {
               <div className="border-l-4 border-vermelho pl-5">
                 <h3 className="font-letreiro-medio text-[1.35rem] text-marinho">Ipatinga</h3>
                 <p className="mt-2 text-tinta-suave">
-                  Todos os bairros, como {site.bairrosIpatinga.slice(0, -1).join(", ")} e{" "}
+                  Mudanças e fretes em todos os bairros, como {site.bairrosIpatinga.slice(0, -1).join(", ")} e{" "}
                   {site.bairrosIpatinga[site.bairrosIpatinga.length - 1]}.
                 </p>
               </div>

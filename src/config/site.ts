@@ -24,7 +24,7 @@ export const site = {
   url: siteUrl,
   locale: "pt_BR",
   description:
-    "Mudanças residenciais e comerciais em Ipatinga e no Vale do Aço, e mudanças estaduais e interestaduais. Móveis protegidos com mantas acolchoadas, desmontagem, montagem e caminhão baú. Orçamento pelo WhatsApp.",
+    "Empresa de mudanças em Ipatinga e no Vale do Aço: mudança residencial e comercial, fretes e transporte de móveis em caminhão baú, com desmontagem e montagem. Mudança estadual e interestadual. Orçamento pelo WhatsApp.",
   slogan: "Mudança segura, ágil e sem estresse.",
 
   /** Quem atende no WhatsApp */

@@ -20,7 +20,7 @@ export function SiteFooter() {
         <div>
           <Image src={logo} alt={site.name} sizes="190px" className="h-auto w-[190px]" />
           <p className="mt-5 max-w-[34ch] text-[0.95rem]">
-            Mudanças residenciais e comerciais em {address.city} e no {address.region}, e mudanças estaduais e
+            Empresa de mudanças e fretes em {address.city} e no {address.region}, com caminhão baú. Mudanças estaduais e
             interestaduais.
           </p>
         </div>

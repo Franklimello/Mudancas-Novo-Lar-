@@ -12,7 +12,8 @@ export function Services() {
             O que a gente faz
           </h2>
           <p className="mt-4 max-w-[40ch] text-lg text-tinta-suave">
-            Da primeira caixa à última peça montada. Você escolhe se quer a mudança completa ou só o transporte.
+            Da primeira caixa à última peça montada. Você escolhe: mudança completa, só o transporte dos móveis ou um frete de
+            poucos itens.
           </p>
         </div>
 

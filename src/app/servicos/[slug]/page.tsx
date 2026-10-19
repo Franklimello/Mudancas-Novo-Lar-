@@ -27,8 +27,9 @@ export async function generateMetadata(props: PageProps<"/servicos/[slug]">): Pr
   })
 }
 
-const imovelPorServico: Record<string, "casa" | "comercio" | ""> = {
+const imovelPorServico: Record<string, "casa" | "comercio" | "poucos-itens" | ""> = {
   "mudanca-comercial": "comercio",
+  "fretes-e-mudancas-pequenas": "poucos-itens",
 }
 
 /*

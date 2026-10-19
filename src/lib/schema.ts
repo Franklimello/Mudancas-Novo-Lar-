@@ -1,6 +1,6 @@
 import { absoluteUrl, enderecoCompleto, site } from "@/config/site"
 import type { Pergunta } from "@/content/faq"
-import type { Servico } from "@/content/servicos"
+import { servicos, type Servico } from "@/content/servicos"
 
 export const empresaId = absoluteUrl("/#empresa")
 
@@ -11,6 +11,8 @@ export function movingCompanySchema() {
     "@type": "MovingCompany",
     "@id": empresaId,
     name: site.name,
+    // Outras formas como o nome aparece (o Instagram é @mudancanovolar)
+    alternateName: ["Novo Lar Mudanças", "Mudança Novo Lar"],
     url: site.url,
     logo: absoluteUrl("/logo-novo-lar.png"),
     image: absoluteUrl("/opengraph-image"),
@@ -39,6 +41,10 @@ export function movingCompanySchema() {
       availableLanguage: "Portuguese",
     })),
     sameAs: [site.instagram.url, site.googleBusinessUrl].filter(Boolean),
+    makesOffer: servicos.map((s) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: s.nome, url: absoluteUrl(`/servicos/${s.slug}`) },
+    })),
   }
 }
 

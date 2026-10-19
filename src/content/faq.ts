@@ -22,9 +22,19 @@ export const perguntasGerais: Pergunta[] = [
       "Sim. Camas, guarda-roupas, armários e racks são desmontados na saída, com parafusos e ferragens guardados juntos, e montados de novo no endereço novo.",
   },
   {
-    pergunta: "Fazem mudança estadual e interestadual?",
+    pergunta: "Fazem mudança de Ipatinga para BH ou para outro estado?",
     resposta:
-      "Sim. Além de Ipatinga e do Vale do Aço, fazemos mudança estadual, para outras cidades de Minas Gerais, e interestadual, para outros estados. Informe o destino no pedido para calcularmos a viagem.",
+      "Sim. Fazemos mudança estadual, para Belo Horizonte, Governador Valadares e outras cidades de Minas Gerais, e interestadual, para outros estados, em caminhão baú fechado. Informe o destino no pedido para calcularmos a viagem.",
+  },
+  {
+    pergunta: "Vocês fazem frete ou mudança pequena?",
+    resposta:
+      "Fazemos. Para poucos móveis, um quarto ou só alguns eletrodomésticos, usamos os caminhões menores da frota, com os móveis protegidos e amarrados no baú.",
+  },
+  {
+    pergunta: "Atendem Coronel Fabriciano, Timóteo e Santana do Paraíso?",
+    resposta:
+      "Sim. Fazemos mudanças e fretes em todo o Vale do Aço: Ipatinga, Coronel Fabriciano, Timóteo e Santana do Paraíso, dentro de cada cidade ou entre elas.",
   },
   {
     pergunta: "Vocês recolhem o material de embalagem depois?",
