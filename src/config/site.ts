@@ -43,6 +43,9 @@ export const site = {
   /** CONFIRMAR: link do perfil da empresa no Google (clientes citam avaliações lá) */
   googleBusinessUrl: "" as string,
 
+  /** Código da meta tag de verificação do Google Search Console (é público, vai no HTML) */
+  googleSiteVerification: "WKbHrteBd7ZVAata6JEWdk1U8D2AAF8Smo41RTP5XFU" as string,
+
   address: {
     city: "Ipatinga",
     state: "MG",

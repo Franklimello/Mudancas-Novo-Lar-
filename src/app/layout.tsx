@@ -22,6 +22,7 @@ const archivo = Archivo({
 })
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID
+const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION || site.googleSiteVerification
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -45,9 +46,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   formatDetection: { telephone: false },
-  verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION
-    ? { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION }
-    : undefined,
+  verification: gscVerification ? { google: gscVerification } : undefined,
 }
 
 export const viewport: Viewport = {
