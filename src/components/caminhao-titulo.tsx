@@ -26,7 +26,8 @@ export function CaminhaoTitulo({ children, letreiroPequeno }: CaminhaoTituloProp
   return (
     <div className="@container relative" style={{ paddingBottom: `${FOLGA}%` }}>
       <div className="flex items-end">
-        <Cabine className="block h-auto w-[25%] shrink-0" />
+        {/* A cabine balança na suspensão; o baú com o título fica firme para a leitura */}
+        <Cabine className="caminhao-hero-cabine block h-auto w-[25%] shrink-0" />
         <div className="bau-caminhao relative min-w-0 flex-1 px-[4.5cqw] pt-[3.6cqw] pb-[4.6cqw]">
           {children}
           {letreiroPequeno ? <div className="mt-[1.6cqw] text-right">{letreiroPequeno}</div> : null}
@@ -35,6 +36,13 @@ export function CaminhaoTitulo({ children, letreiroPequeno }: CaminhaoTituloProp
 
       <div aria-hidden="true" className="mr-[3%] ml-[1%] rounded-b-sm bg-[#2f3a45]" style={{ height: `${CHASSI}cqw` }} />
 
+      {/* Estrada passando por baixo: o caminhão "anda" sem sair do lugar */}
+      <div
+        aria-hidden="true"
+        className="caminhao-hero-estrada absolute inset-x-0"
+        style={{ bottom: `${baseRoda - 0.9}cqw`, height: "0.5cqw" }}
+      />
+
       {/* Sombra no chão */}
       <div
         aria-hidden="true"
@@ -42,8 +50,25 @@ export function CaminhaoTitulo({ children, letreiroPequeno }: CaminhaoTituloProp
         style={{ bottom: `${baseRoda - 1.2}cqw`, height: "2.6cqw" }}
       />
 
-      <Roda style={{ left: `calc(10.5% - ${RODA / 2}cqw)`, bottom: `${baseRoda}cqw`, width: `${RODA}cqw` }} />
-      <Roda style={{ left: `calc(85% - ${RODA / 2}cqw)`, bottom: `${baseRoda}cqw`, width: `${RODA}cqw` }} />
+      {/* Escapamento logo atrás da cabine, soltando fumaça para trás */}
+      <div aria-hidden="true" className="absolute left-[25%]" style={{ bottom: `${FOLGA - 0.6}cqw` }}>
+        <span className="block rounded-r-full bg-[#2f3a45]" style={{ width: "2.4cqw", height: "0.9cqw" }} />
+        <span className="caminhao-hero-fumaca absolute top-0 left-[2cqw]">
+          <span />
+          <span />
+          <span />
+          <span />
+        </span>
+      </div>
+
+      <Roda
+        className="caminhao-hero-roda"
+        style={{ left: `calc(10.5% - ${RODA / 2}cqw)`, bottom: `${baseRoda}cqw`, width: `${RODA}cqw` }}
+      />
+      <Roda
+        className="caminhao-hero-roda"
+        style={{ left: `calc(85% - ${RODA / 2}cqw)`, bottom: `${baseRoda}cqw`, width: `${RODA}cqw` }}
+      />
     </div>
   )
 }
@@ -83,9 +108,9 @@ function Cabine({ className }: { className?: string }) {
   )
 }
 
-function Roda({ style }: { style: React.CSSProperties }) {
+function Roda({ style, className }: { style: React.CSSProperties; className?: string }) {
   return (
-    <svg viewBox="0 0 100 100" aria-hidden="true" className="absolute h-auto" style={style}>
+    <svg viewBox="0 0 100 100" aria-hidden="true" className={`absolute h-auto ${className ?? ""}`} style={style}>
       <circle cx="50" cy="50" r="49" fill="#1f2933" />
       <circle cx="50" cy="50" r="30" fill="#9aa5b1" />
       <circle cx="50" cy="50" r="22" fill="#c9d1d8" />

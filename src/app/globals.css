@@ -306,3 +306,95 @@
   border-radius: 1px;
   background: repeating-linear-gradient(90deg, var(--color-vermelho) 0 3cqw, #ffffff 3cqw 5cqw);
 }
+
+/* Caminhão do hero "andando" no lugar: rodas girando, cabine na suspensão,
+   estrada passando e fumaça do escapamento */
+.caminhao-hero-roda {
+  transform-origin: 50% 50%;
+  animation: caminhao-hero-roda 0.75s linear infinite;
+}
+
+/* virado para a esquerda: andando para a esquerda, a roda gira no sentido anti-horário */
+@keyframes caminhao-hero-roda {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.caminhao-hero-cabine {
+  transform-origin: 50% 100%;
+  animation: caminhao-hero-suspensao 0.45s ease-in-out infinite alternate;
+}
+
+@keyframes caminhao-hero-suspensao {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-0.45cqw) rotate(-0.4deg);
+  }
+}
+
+.caminhao-hero-estrada {
+  background: repeating-linear-gradient(90deg, #c5ced6 0 4cqw, transparent 4cqw 8cqw);
+  border-radius: 9999px;
+  animation: caminhao-hero-estrada 0.75s linear infinite;
+}
+
+@keyframes caminhao-hero-estrada {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 8cqw 0;
+  }
+}
+
+.caminhao-hero-fumaca span {
+  position: absolute;
+  left: 0;
+  top: -1cqw;
+  width: 2.8cqw;
+  height: 2.8cqw;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 40% 40%, rgb(150 162 176 / 0.75), rgb(120 133 148 / 0.45));
+  opacity: 0;
+  animation: caminhao-hero-fumaca 1.8s ease-out infinite;
+}
+
+.caminhao-hero-fumaca span:nth-child(2) {
+  animation-delay: 0.45s;
+}
+
+.caminhao-hero-fumaca span:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.caminhao-hero-fumaca span:nth-child(4) {
+  animation-delay: 1.35s;
+}
+
+@keyframes caminhao-hero-fumaca {
+  0% {
+    transform: translate(0, 0) scale(0.4);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(17cqw, -3.5cqw) scale(2.8);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caminhao-hero-roda,
+  .caminhao-hero-cabine,
+  .caminhao-hero-estrada {
+    animation: none;
+  }
+  .caminhao-hero-fumaca {
+    display: none;
+  }
+}
