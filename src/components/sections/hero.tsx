@@ -1,21 +1,26 @@
+import { CaminhaoTitulo } from "@/components/caminhao-titulo"
 import { QuoteForm } from "@/components/quote-form"
 import { WhatsappIcon } from "@/components/whatsapp-icon"
-import { site } from "@/config/site"
+import { primaryWhatsapp, site } from "@/config/site"
 import { whatsappLink } from "@/lib/whatsapp"
 
 export function Hero() {
   return (
     <section aria-labelledby="hero-titulo">
-      <div className="container-site grid gap-12 pt-10 pb-16 md:pt-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:pt-20 lg:pb-24">
+      <div className="container-site grid gap-12 pt-10 pb-16 md:pt-16 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)] lg:gap-16 lg:pt-20 lg:pb-24">
         <div className="lg:sticky lg:top-28 lg:self-start lg:pt-6">
-          <h1
-            id="hero-titulo"
-            className="font-letreiro max-w-[15ch] text-[2.55rem] text-marinho sm:text-[3.4rem] lg:text-[3.9rem] xl:text-[4.3rem]"
+          {/* O título vem "pintado" no baú, como o letreiro dos caminhões da empresa */}
+          <CaminhaoTitulo
+            letreiroPequeno={
+              <p className="font-letreiro-medio text-[2.7cqw] text-vermelho">{primaryWhatsapp.display}</p>
+            }
           >
-            Sua mudança em Ipatinga, cuidada como se fosse a nossa.
-          </h1>
+            <h1 id="hero-titulo" className="font-letreiro text-[5.7cqw] text-balance text-marinho">
+              Sua mudança em Ipatinga, cuidada como se fosse a nossa.
+            </h1>
+          </CaminhaoTitulo>
 
-          <p className="mt-6 max-w-[52ch] text-lg text-tinta-suave sm:text-xl sm:leading-relaxed">
+          <p className="mt-8 max-w-[52ch] text-lg text-tinta-suave sm:text-xl sm:leading-relaxed">
             A gente protege os móveis, desmonta, leva e monta de novo. Casas, apartamentos e comércios em Ipatinga e no Vale do
             Aço, e mudanças estaduais e interestaduais.
           </p>

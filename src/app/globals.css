@@ -285,3 +285,24 @@
     animation: none;
   }
 }
+
+/* Baú do caminhão do hero (src/components/caminhao-titulo.tsx); cqw = largura do caminhão */
+.bau-caminhao {
+  background: repeating-linear-gradient(to bottom, #f8fafb 0 0.95cqw, #e7ecf0 0.95cqw 1.1cqw);
+  border: 2px solid #c5ced6;
+  border-top: 0.9cqw solid #d3dbe1;
+  border-radius: 0.9cqw 0.9cqw 0.4cqw 0.4cqw;
+  box-shadow: inset 0 -0.5cqw 0 #dfe5ea;
+}
+
+/* Faixa refletiva vermelha e branca na base do baú */
+.bau-caminhao::after {
+  content: "";
+  position: absolute;
+  left: 2cqw;
+  right: 2cqw;
+  bottom: 1.5cqw;
+  height: 0.9cqw;
+  border-radius: 1px;
+  background: repeating-linear-gradient(90deg, var(--color-vermelho) 0 3cqw, #ffffff 3cqw 5cqw);
+}
