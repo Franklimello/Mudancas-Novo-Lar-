@@ -1,4 +1,4 @@
-import { absoluteUrl, site } from "@/config/site"
+import { absoluteUrl, enderecoCompleto, site } from "@/config/site"
 import type { Pergunta } from "@/content/faq"
 import type { Servico } from "@/content/servicos"
 
@@ -22,16 +22,19 @@ export function movingCompanySchema() {
       addressLocality: address.city,
       addressRegion: address.state,
       addressCountry: address.country,
-      ...(address.street ? { streetAddress: address.street } : {}),
+      ...(address.street
+        ? { streetAddress: address.district ? `${address.street} - ${address.district}` : address.street }
+        : {}),
       ...(address.postalCode ? { postalCode: address.postalCode } : {}),
     },
+    ...(address.street ? { hasMap: `https://www.google.com/maps?q=${encodeURIComponent(enderecoCompleto())}` } : {}),
     areaServed: [
       ...site.valeDoAco.map((name) => ({ "@type": "City", name })),
       { "@type": "State", name: "Minas Gerais" },
     ],
-    contactPoint: site.whatsapp.map((w) => ({
+    contactPoint: [...site.whatsapp, site.telefoneFixo].map((t) => ({
       "@type": "ContactPoint",
-      telephone: `+${w.number}`,
+      telephone: `+${t.number}`,
       contactType: "customer service",
       availableLanguage: "Portuguese",
     })),

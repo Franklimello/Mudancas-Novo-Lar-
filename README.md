@@ -27,7 +27,7 @@ Copie `.env.example` para `.env.local` e preencha:
 
 | O quê | Arquivo |
 | --- | --- |
-| Telefones, Instagram, endereço, cidades e bairros | `src/config/site.ts` |
+| Telefones, Instagram, endereço (e o mapa), cidades e bairros | `src/config/site.ts` |
 | Serviços (textos, SEO, perguntas de cada página) | `src/content/servicos.ts` |
 | Depoimentos (conversas do WhatsApp) | `src/content/depoimentos.ts` |
 | Perguntas frequentes da home | `src/content/faq.ts` |
@@ -45,7 +45,6 @@ Para criar um serviço novo, adicione um item em `servicos.ts`. A página `/serv
 
 ## Confirmar com o cliente antes de publicar
 
-- [ ] Endereço completo e CEP (`site.address`). A foto de perfil do Instagram mostra um endereço na Av. Selim José de Sales, mas está ilegível.
 - [ ] Link do perfil da empresa no Google (`site.googleBusinessUrl`): os clientes citam avaliações lá
 - [ ] Se é a Marília quem atende (o nome aparece no site)
 - [ ] Se fazem mudança comercial e transporte avulso ("só o transporte")

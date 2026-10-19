@@ -35,6 +35,9 @@ export const site = {
     { number: "5531986447020", display: "(31) 98644-7020" },
   ],
 
+  /** Telefone fixo do cartão da empresa */
+  telefoneFixo: { number: "553138237343", display: "(31) 3823-7343" },
+
   instagram: {
     handle: "@mudancanovolar",
     url: "https://www.instagram.com/mudancanovolar/",
@@ -51,9 +54,10 @@ export const site = {
     state: "MG",
     region: "Vale do Aço",
     country: "BR",
-    /** CONFIRMAR: endereço completo e CEP. Deixe vazio para não exibir. */
-    street: "" as string,
-    postalCode: "" as string,
+    /** Endereço do cartão da empresa; CEP conferido no ViaCEP */
+    street: "Rua Magdala, 185" as string,
+    district: "Canaã" as string,
+    postalCode: "35164-185" as string,
   },
 
   /** Cidades atendidas, usadas no texto e no areaServed do JSON-LD */
@@ -85,4 +89,23 @@ export const primaryWhatsapp = site.whatsapp[0]
 
 export function absoluteUrl(path = "/") {
   return `${site.url}${path.startsWith("/") ? path : `/${path}`}`
+}
+
+/** Endereço numa linha só, para exibir e para buscar no Google Maps */
+export function enderecoCompleto() {
+  const { street, district, city, state, postalCode } = site.address
+  return [street, district, `${city} - ${state}`, postalCode].filter(Boolean).join(", ")
+}
+
+/*
+ * URL final do embed (a mesma para onde o Google redireciona ?q=...&output=embed).
+ * Usar direto evita o redirecionamento, que responde com X-Frame-Options.
+ */
+export function mapsEmbedUrl() {
+  const busca = encodeURIComponent(enderecoCompleto()).replace(/%20/g, "+")
+  return `https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s${busca}!6i16`
+}
+
+export function mapsRotaUrl() {
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(enderecoCompleto())}`
 }

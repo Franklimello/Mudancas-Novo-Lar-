@@ -1,11 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
+import { MapPinIcon, PhoneIcon } from "lucide-react"
 
 import logo from "@/assets/logo-novo-lar-contorno.png"
 import { InstagramIcon } from "@/components/instagram-icon"
 import { navLinks } from "@/components/site-header"
 import { WhatsappIcon } from "@/components/whatsapp-icon"
-import { site } from "@/config/site"
+import { mapsRotaUrl, site } from "@/config/site"
 import { servicos } from "@/content/servicos"
 import { whatsappLink } from "@/lib/whatsapp"
 
@@ -78,9 +79,25 @@ export function SiteFooter() {
               </a>
             </p>
             <p>
-              {address.street ? `${address.street}, ` : ""}
-              {address.city}, {address.state}
-              {address.postalCode ? `, CEP ${address.postalCode}` : ""}
+              <a href={`tel:+${site.telefoneFixo.number}`} className={`inline-flex items-center gap-2 ${linkRodape}`}>
+                <PhoneIcon className="size-4 text-white" aria-hidden="true" />
+                {site.telefoneFixo.display}
+              </a>
+            </p>
+            <p>
+              <a
+                href={mapsRotaUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex gap-2 ${linkRodape}`}
+              >
+                <MapPinIcon className="mt-0.5 size-4 shrink-0 text-white" aria-hidden="true" />
+                <span>
+                  {address.street}, {address.district}
+                  <br />
+                  {address.city}/{address.state}, CEP {address.postalCode}
+                </span>
+              </a>
             </p>
           </address>
         </div>

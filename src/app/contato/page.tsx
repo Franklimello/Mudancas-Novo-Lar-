@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
+import { PhoneIcon } from "lucide-react"
 
 import { JsonLd } from "@/components/json-ld"
+import { MapaEndereco } from "@/components/mapa-endereco"
 import { QuoteForm } from "@/components/quote-form"
 import { WhatsappIcon } from "@/components/whatsapp-icon"
 import { site } from "@/config/site"
@@ -11,7 +13,7 @@ import { whatsappLink } from "@/lib/whatsapp"
 export const metadata: Metadata = pageMetadata({
   title: "Contato e orçamento de mudança em Ipatinga",
   description:
-    "Fale com a Mudanças Novo Lar pelo WhatsApp (31) 98742-5488 ou (31) 98644-7020. Orçamento de mudança em Ipatinga e Vale do Aço, estadual e interestadual.",
+    "Fale com a Mudanças Novo Lar pelo WhatsApp (31) 98742-5488 ou (31) 98644-7020. Rua Magdala, 185, Canaã, Ipatinga. Orçamento de mudança no Vale do Aço, estadual e interestadual.",
   path: "/contato",
 })
 
@@ -60,10 +62,23 @@ export default function ContatoPage() {
               </dd>
             </div>
             <div>
-              <dt className="text-sm text-tinta-suave">Cidade</dt>
+              <dt className="text-sm text-tinta-suave">Telefone fixo</dt>
+              <dd className="mt-1">
+                <a
+                  href={`tel:+${site.telefoneFixo.number}`}
+                  className="inline-flex items-center gap-2 rounded-sm text-xl font-semibold text-marinho underline decoration-petroleo decoration-2 underline-offset-[6px] hover:decoration-marinho"
+                >
+                  <PhoneIcon className="size-5 text-petroleo-texto" aria-hidden="true" />
+                  {site.telefoneFixo.display}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-sm text-tinta-suave">Endereço</dt>
               <dd className="mt-1 text-xl font-semibold text-marinho">
-                {address.street ? `${address.street}, ` : ""}
-                {address.city}, {address.state}
+                {address.street}, {address.district}
+                <br />
+                {address.city}/{address.state}, CEP {address.postalCode}
               </dd>
             </div>
           </dl>
@@ -71,6 +86,15 @@ export default function ContatoPage() {
 
         <QuoteForm />
       </div>
+
+      <section aria-labelledby="mapa-titulo" className="border-t border-linha">
+        <div className="container-site py-14 md:py-20">
+          <h2 id="mapa-titulo" className="font-letreiro text-[1.9rem] text-marinho sm:text-[2.3rem]">
+            Onde estamos
+          </h2>
+          <MapaEndereco className="mt-8" />
+        </div>
+      </section>
       <JsonLd
         data={breadcrumbSchema([
           { nome: "Início", path: "/" },

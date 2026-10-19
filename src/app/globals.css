@@ -155,3 +155,133 @@
   box-shadow: 0 1px 0 rgb(11 37 69 / 0.06);
   backdrop-filter: blur(1px);
 }
+
+/* Mapa de rotas animado (src/components/mapa-rotas.tsx) */
+.mapa-rotas .mapa-rotas-rotulo {
+  fill: var(--color-marinho);
+  font-family: var(--font-archivo);
+  paint-order: stroke;
+  stroke: var(--color-nevoa);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+/* No celular o SVG encolhe; letras um pouco maiores para continuarem legíveis */
+@media (width < 40rem) {
+  .mapa-rotas .mapa-rotas-rotulo {
+    font-size: 19px;
+  }
+  .mapa-rotas .mapa-rotas-hub {
+    font-size: 25px;
+  }
+}
+
+.mapa-rotas-linha {
+  animation: mapa-fluxo 0.9s linear infinite;
+}
+
+.mapa-rotas-linha-longa {
+  animation: mapa-fluxo-longo 1.1s linear infinite;
+}
+
+.mapa-rotas-pulso {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mapa-pulso 2.4s ease-out infinite;
+}
+
+@keyframes mapa-fluxo {
+  to {
+    stroke-dashoffset: -9.1;
+  }
+}
+
+@keyframes mapa-fluxo-longo {
+  to {
+    stroke-dashoffset: -11.1;
+  }
+}
+
+@keyframes mapa-pulso {
+  from {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapa-rotas-linha,
+  .mapa-rotas-linha-longa,
+  .mapa-rotas-pulso {
+    animation: none;
+  }
+  .mapa-rotas-pulso,
+  .mapa-rotas-pontos {
+    display: none;
+  }
+}
+
+/* Caminhãozinho do canto (src/components/caminhao-recado.tsx) */
+.caminhao-motor {
+  animation: caminhao-motor 6s ease-in-out infinite;
+}
+
+@keyframes caminhao-motor {
+  0%,
+  86%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  88% {
+    transform: translateY(-1.5px) rotate(-0.8deg);
+  }
+  90% {
+    transform: translateY(0) rotate(0.6deg);
+  }
+  92% {
+    transform: translateY(-1px) rotate(-0.4deg);
+  }
+  94% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.caminhao-fumaca span {
+  position: absolute;
+  right: -2px;
+  bottom: 12%;
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background: rgb(140 152 165 / 0.55);
+  animation: caminhao-fumaca 0.9s ease-out infinite;
+}
+
+.caminhao-fumaca span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.caminhao-fumaca span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes caminhao-fumaca {
+  from {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 0.8;
+  }
+  to {
+    transform: translate(26px, -10px) scale(1.7);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caminhao-motor {
+    animation: none;
+  }
+}

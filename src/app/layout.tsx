@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Archivo } from "next/font/google"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
+import { CaminhaoRecado } from "@/components/caminhao-recado"
 import { JsonLd } from "@/components/json-ld"
 import { MobileContactBar } from "@/components/mobile-contact-bar"
 import { SiteFooter } from "@/components/site-footer"
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <SiteFooter />
         <MobileContactBar />
+        <CaminhaoRecado />
         <JsonLd data={movingCompanySchema()} />
       </body>
       {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
