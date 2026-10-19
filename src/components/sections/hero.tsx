@@ -1,4 +1,5 @@
 import { CaminhaoTitulo } from "@/components/caminhao-titulo"
+import { LetreiroBau } from "@/components/letreiro-bau"
 import { QuoteForm } from "@/components/quote-form"
 import { WhatsappIcon } from "@/components/whatsapp-icon"
 import { primaryWhatsapp, site } from "@/config/site"
@@ -15,9 +16,16 @@ export function Hero() {
               <p className="font-letreiro-medio text-[2.7cqw] text-vermelho">{primaryWhatsapp.display}</p>
             }
           >
-            <h1 id="hero-titulo" className="font-letreiro text-[5.7cqw] text-balance text-marinho">
-              Sua mudança em Ipatinga, cuidada como se fosse a nossa.
-            </h1>
+            <LetreiroBau
+              titulo="Sua mudança em Ipatinga, cuidada como se fosse a nossa."
+              frases={[
+                "Móveis protegidos com mantas acolchoadas.",
+                "Do Vale do Aço para toda Minas e outros estados.",
+                "Desmontamos, levamos e montamos de novo.",
+                "Orçamento sem compromisso pelo WhatsApp.",
+              ]}
+              className="font-letreiro text-[5.7cqw] text-balance text-marinho"
+            />
           </CaminhaoTitulo>
 
           <p className="mt-8 max-w-[52ch] text-lg text-tinta-suave sm:text-xl sm:leading-relaxed">

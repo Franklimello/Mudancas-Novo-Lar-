@@ -6,12 +6,14 @@ import { AnimatePresence, motion, useAnimate, useReducedMotion } from "motion/re
 
 import caminhao from "@/assets/caminhao-novo-lar.png"
 import { WhatsappIcon } from "@/components/whatsapp-icon"
+import { buzinar } from "@/lib/buzina"
 import { whatsappLink } from "@/lib/whatsapp"
 
 /*
  * Caminhãozinho estacionado no canto da tela. Ao clicar, ele atravessa a tela para a
  * esquerda puxando uma faixa com um recado (que leva ao WhatsApp) e depois volta para
- * a vaga. Com "reduzir movimento", a faixa só aparece acima do caminhão, sem ele andar.
+ * a vaga, com uma buzinada (fon-fon) na saída. Com "reduzir movimento", a faixa só
+ * aparece acima do caminhão, sem ele andar.
  */
 
 const recados = [
@@ -64,12 +66,14 @@ export function CaminhaoRecado() {
   async function partir() {
     setDica(false)
     if (reduzir) {
+      if (!estatico) buzinar()
       setEstatico((v) => !v)
       if (!estatico) setIndice((i) => (i + 1) % recados.length)
       return
     }
     if (fase !== "parado" || !grupo.current) return
 
+    buzinar() // fon-fon antes de sair
     setFase("andando")
     // espera a faixa entrar no DOM para medir até onde ela vai
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))
