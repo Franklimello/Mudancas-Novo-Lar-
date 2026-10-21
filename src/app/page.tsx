@@ -6,6 +6,7 @@ import { Hero } from "@/components/sections/hero"
 import { Process } from "@/components/sections/process"
 import { Services } from "@/components/sections/services"
 import { Testimonials } from "@/components/sections/testimonials"
+import { VideoBanner } from "@/components/sections/video-banner"
 import { perguntasGerais } from "@/content/faq"
 import { faqSchema, websiteSchema } from "@/lib/schema"
 
@@ -14,6 +15,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Services />
+      <VideoBanner />
       <Process />
       <Testimonials />
       <Areas />
